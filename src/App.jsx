@@ -99,9 +99,9 @@ const App = () => {
       <div style={{ marginTop: "20px", textAlign: "center" }}>
         <h2>Catalog</h2>
         <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
-          <button onClick={() => setCatalogResult("Result 1")}>Accomadations 1</button>
-          <button onClick={() => setCatalogResult("Result 2")}>Events 2</button>
-          <button onClick={() => setCatalogResult("Result 3")}>Popular sites 3</button>
+          <button onClick={() => setCatalogResult("Result 1")}>Accomadations</button>
+          <button onClick={() => setCatalogResult("Result 2")}>Events </button>
+          <button onClick={() => setCatalogResult("Result 3")}>Popular sites </button>
         </div>
         <div style={{ marginTop: "10px", border: "none", padding: "10px", width: "300px", minHeight: "50px", backgroundColor: "#d3d3d3", boarderRadius:'12px' }}>
           {catalogResult}

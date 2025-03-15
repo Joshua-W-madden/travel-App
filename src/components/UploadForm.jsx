@@ -69,6 +69,8 @@ function UploadForm() {
                     <textarea
                         id="room-description"
                         name="room-description"
+                        rows="10"
+                        cols="50"
                         onChange={handleChange}
                     />
                 </div>

@@ -2,7 +2,7 @@
 
 This app is designed to be an all in one solution for travel enthusiasts and backpackers. 
 
-### Key Functions
+### Key Functions (WIP)
 - a social feed
 > This gives users the oppertunity to share travel spots and reviews. As well as connecting to fellow travel fanatics
 - a chat function

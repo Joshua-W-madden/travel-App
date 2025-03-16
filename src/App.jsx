@@ -6,8 +6,11 @@ import {
     DirectionsRenderer,
     Marker,
 } from "@react-google-maps/api";
-import { Link, Route, Routes } from "react-router-dom";
-import UploadForm from "./components/UploadForm";
+// import Routes from "./components/Routes";
+import AccommodationPosting from "./components/SocialPosting";
+import accommodationData from "./data/posting-data";
+import { Routes, Route } from "react-router-dom";
+import PageAccommodation from "./pages/PageAccommodation";
 
 const containerStyle = {
     width: "800px",
@@ -74,6 +77,18 @@ const App = () => {
         setSelectedRoute(null);
         setPins([]);
     };
+
+    const displayAccommodation = () => {
+        setCatalogResult(
+            accommodationData.map((accommodation) => (
+                <AccommodationPosting
+                    key={accommodation.id}
+                    accommodationObj={accommodation}
+                />
+            ))
+        );
+    };
+
     return (
         <div
             style={{
@@ -130,7 +145,9 @@ const App = () => {
                         justifyContent: "center",
                     }}
                 >
-                    <button onClick={() => setCatalogResult("Result 1")}>
+                    <button
+                        onClick={() => setCatalogResult(displayAccommodation)}
+                    >
                         Accommodations
                     </button>
                     <button onClick={() => setCatalogResult("Result 2")}>
@@ -153,29 +170,15 @@ const App = () => {
                 >
                     {catalogResult}
                 </div>
-
-                {catalogResult === "Result 1" && (
-                    <div style={{ marginTop: "20px" }}>
-                        <Link to="/upload">
-                            <button
-                                style={{
-                                    padding: "10px 20px",
-                                    fontSize: "16px",
-                                }}
-                            >
-                                Upload
-                            </button>
-                        </Link>
-                    </div>
-                )}
             </div>
 
             <Routes>
+                <Route path="/" element={<div></div>} />
                 <Route
-                    path="/"
-                    element={<div>Welcome to the Travel App</div>}
+                    path="/accommodation:id"
+                    element={<PageAccommodation />}
                 />
-                <Route path="/upload" element={<UploadForm />} />
+                <Route path="*" element={<h1>Page Not Found</h1>} />
             </Routes>
         </div>
     );

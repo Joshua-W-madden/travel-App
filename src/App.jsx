@@ -101,7 +101,7 @@ const App = () => {
                 margin: "auto",
             }}
         >
-            <LoadScript googleMapsApiKey="AIzaSyA61PR3ANN4XfHJdrKz6EkYCnBHB_BgacQ">
+            <LoadScript googleMapsApiKey="###################">
                 <GoogleMap
                     mapContainerStyle={containerStyle}
                     center={center}
